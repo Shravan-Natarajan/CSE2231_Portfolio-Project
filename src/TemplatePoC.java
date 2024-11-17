@@ -8,27 +8,17 @@ import components.simplewriter.SimpleWriter1L;
 
 public class TemplatePoC {
 
-    //private String templateString;
-
-    //public TemplatePoC(String templateString) {
-    //this.templateString = templateString;
-    // Hi $name, welcome to $site
-    //}
-
-    //public String substitute(Map<String, String> mapping) {
-    // {("name": "Joe"), ("site", "google.com")}
-    //this.templateString.split(this.templateString);
-    //}
-
-    //public Map<String, String> substitute(String key, String value) {
-    //Map<String, String> mapping = new Map1L<>();
-    //mapping.add(key, value);
-    //return mapping;
-
-    //}
-
-    /*
+    /**
+     * Prints all the info out to a file
      *
+     * @param outputLocale
+     *            the writing to the file
+     * @param mapping
+     *            map containing all the data
+     * @param numOfClasses
+     *            info on how many entries there are
+     * @requires numOfClasses > 0
+     * @ensures <pre> Prints out the data in pre determined format to file
      */
     public static void printToFile(SimpleWriter outputLocale,
             Map<String, String> mapping, int numOfClasses) {
