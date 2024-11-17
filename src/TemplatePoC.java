@@ -59,5 +59,4 @@ public class TemplatePoC {
         //Print data
         printToFile(outputFileLocation, mapping, numOfClassesFR);
     }
-
 }
