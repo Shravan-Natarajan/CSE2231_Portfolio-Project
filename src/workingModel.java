@@ -78,7 +78,7 @@ public class workingModel {
         for (int i = 0; i < numOfClasses; i++) {
             Map.Pair<String, String> nameAndTime = mapping.removeAny();
             outputLocale.println("Hi, my name is " + nameAndTime.key()
-                    + ", and I'm in your " + nameAndTime.value() + "class.");
+                    + ", and I'm in your " + nameAndTime.value() + " class.");
             mapCopy.add(nameAndTime.key(), nameAndTime.value());
         }
         mapping.transferFrom(mapCopy);
