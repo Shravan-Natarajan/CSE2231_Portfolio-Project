@@ -90,4 +90,4 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- changelog and finished todo of 4 (since i sorta did this already on accident).
+- Moved around and overhauled the kernel and finished the abstract completely.
