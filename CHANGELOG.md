@@ -87,3 +87,7 @@ the following form: YYYY.0M.0D.
 
 - Designed kernel (IntroKernel)
 - Designed enhanced(Intro)
+
+### Added
+
+- changelog and finished todo of 4 (since i sorta did this already on accident).

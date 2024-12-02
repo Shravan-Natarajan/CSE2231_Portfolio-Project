@@ -1,38 +1,48 @@
-import components.map.Map;
-import components.simplereader.SimpleReader;
-import components.simplewriter.SimpleWriter;
+public interface IntroKernel extends Standard<Intro> {
 
-public interface IntroKernel {
+    enum Keys {
+        NAME("Hi, my name is "), TIME("I am in your class at ");
 
-    /**
-     * Allows buttons to copy to clipboard an intro statement based on map.
-     *
-     * @param nameAndTime
-     *            The map containing data for the buttons
-     *
-     */
-    public static void copyClipboard(Map.Pair<String, String> nameAndTime) {
+        String prompt;
 
+        public String getPrompt() {
+            return this.prompt;
+        }
+
+        private Keys(String prompt) {
+            this.prompt = prompt;
+        }
     }
 
     /**
-     * Populates a map by repeatedly asking user for data depending on desired
-     * amount of intros
+     * Sets some data.
      *
-     * @param in
-     *            Allows the user provided info to be interpreted by code.
-     *
-     * @param out
-     *            Allows code to ask user questions.
-     *
-     * @param numOfClasses
-     *            The number of intros the user requested.
-     *
-     * @param mapping
-     *            The map containing all the data.
+     * @param key
+     *            the key you want to set
+     * @param value
+     *            the corresponding value of that key
+     * @ensures key is set to some value
      */
-    public static void getData(SimpleReader in, SimpleWriter out,
-            int numOfClasses, Map<String, String> mapping) {
+    void setData(Key key, String value);
 
-    }
+    /**
+     * Gets some data.
+     *
+     * @param key
+     *            the key we want to look up
+     * @return a string corresponding to the input key
+     * @requires [key exists]
+     * @ensures returns the corresponding value
+     */
+    String getData(Key key);
+
+    /**
+     * Checks if some data exists.
+     *
+     * @param key
+     *            a key to look up
+     * @return true if key exists
+     * @ensures true if key exists
+     */
+    boolean hasData(Key key);
 }
