@@ -78,3 +78,12 @@ the following form: YYYY.0M.0D.
 - Designed a emailIntro component
 - Designed a GPA calculator component
 - Designed a Vector translator component
+
+### Added
+
+- Designed a templatePOC that shows a functioning version of the implementations.
+
+### Added
+
+- Designed kernel (IntroKernel)
+- Designed enhanced(Intro)
