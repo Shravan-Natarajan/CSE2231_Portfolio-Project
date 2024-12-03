@@ -91,3 +91,8 @@ the following form: YYYY.0M.0D.
 ### Added
 
 - Moved around and overhauled the kernel and finished the abstract completely.
+
+### Added
+
+-Finished all the kernel implementation code
+-Added implementation diagram

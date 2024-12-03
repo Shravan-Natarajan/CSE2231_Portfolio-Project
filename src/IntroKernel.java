@@ -41,8 +41,8 @@ public interface IntroKernel extends Standard<Intro> {
      *
      * @param key
      *            a key to look up
-     * @return true if key exists
-     * @ensures true if key exists
+     * @return true if key exists, false otherwise
+     * @ensures boolean if key exists
      */
     boolean hasData(Key key);
 }
