@@ -1,6 +1,8 @@
+import components.standard.Standard;
+
 public interface IntroKernel extends Standard<Intro> {
 
-    enum Keys {
+    enum Key {
         NAME("Hi, my name is "), TIME("I am in your class at ");
 
         String prompt;
@@ -9,7 +11,7 @@ public interface IntroKernel extends Standard<Intro> {
             return this.prompt;
         }
 
-        private Keys(String prompt) {
+        private Key(String prompt) {
             this.prompt = prompt;
         }
     }

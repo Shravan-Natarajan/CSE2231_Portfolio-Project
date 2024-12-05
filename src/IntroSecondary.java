@@ -1,9 +1,20 @@
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.ActionListener;
+
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+import components.simplewriter.SimpleWriter;
+import javafx.event.ActionEvent;
+import javafx.scene.input.Clipboard;
+
 public abstract class IntroSecondary implements Intro {
 
     @Override
     public void printButtons() {
         JFrame f = new JFrame("Button Example");
-        f.setLayout(new GridLayout(numOfClasses, 1));
+        f.setLayout(new GroupLayout(1, 1));
 
         JButton b = new JButton(this.getData(Key.NAME) + ", Click to copy your "
                 + this.getData(Key.TIME) + " class.");
@@ -11,7 +22,7 @@ public abstract class IntroSecondary implements Intro {
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                copyClipboard();
+                IntroSecondary.this.copyClipboard();
             }
         });
         f.add(b);
@@ -25,9 +36,18 @@ public abstract class IntroSecondary implements Intro {
                 + " and " + Key.TIME.getPrompt() + this.getData(Key.TIME));
     }
 
-    public copyClipboard(){
+    @Override
+    public void copyClipboard() {
         String copyString = Key.NAME.getPrompt() + this.getData(Key.NAME)
-        + " and " + Key.TIME.getPrompt() + this.getData(Key.TIME);
+                + " and " + Key.TIME.getPrompt() + this.getData(Key.TIME);
+        StringSelection pasteString = new StringSelection(copyString);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(pasteString, null);
+    }
+
+    @Override
+    public void copyClipboardCustom(String s1, String s2) {
+        String copyString = s1 + s2;
         StringSelection pasteString = new StringSelection(copyString);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(pasteString, null);

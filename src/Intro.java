@@ -1,4 +1,3 @@
-import components.map.Map;
 import components.simplewriter.SimpleWriter;
 
 public interface Intro extends IntroKernel {
@@ -24,4 +23,10 @@ public interface Intro extends IntroKernel {
      */
     void copyClipboard();
 
+    /**
+     * Allows buttons to copy to clipboard an intro statement based user
+     * inputted statements.
+     *
+     */
+    void copyClipboardCustom(String s1, String s2);
 }

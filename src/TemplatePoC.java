@@ -1,5 +1,4 @@
-import java.util.Map;
-
+import components.map.Map;
 import components.map.Map1L;
 import components.simplereader.SimpleReader;
 import components.simplereader.SimpleReader1L;
